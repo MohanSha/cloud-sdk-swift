@@ -39,6 +39,9 @@ class CafeDetailViewController: UIViewController {
         
         guard let builder = GAIDictionaryBuilder.createScreenView().set(self.screenName, forKey: kGAIScreenName) else { return}
         tracker.send(builder.build() as [NSObject : AnyObject])
+        
+        guard let eventBuilder = GAIDictionaryBuilder.createEvent(withCategory: "screen", action: "view", label: self.screenName, value: nil) else { return}
+        tracker.send(eventBuilder.build() as [NSObject : AnyObject])
     }
     
     override func viewWillAppear(_ animated: Bool) {
