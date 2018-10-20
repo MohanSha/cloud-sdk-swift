@@ -4,15 +4,44 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/KenticoCloud.svg)](https://cocoapods.org/pods/KenticoCloud)
 [![CocoaPods](https://img.shields.io/cocoapods/p/KenticoCloud.svg)](https://cocoapods.org/pods/KenticoCloud)
 
-## Summary
+## Table of contents
+1 [Summary](#Summary)
+
+2 [Sample app](#Sampleapp)
+
+3 [Quick start](#Quickstart)
+
+4 [Installation](#Installation)
+
+5 [Using the DeliveryClient](#UsingtheDeliveryClient)
+
+6 [Getting items](#Gettingitems)
+
+7 [Getting content types](#Gettingcontenttypes) 
+
+8 [Getting taxonomies](#Gettingtaxonomies)
+
+9 [Using the TrackingClient](#UsingtheTrackingClient)
+
+10 [Debug](#Debug)
+
+11 [Documentation](#Documentation)
+
+12 [Further information](#Furtherinformation)
+
+13 [Feedback & Contributing](#FeedbackContributing)
+
+14 [License](#License)
+
+## <a name="Summary"> Summary</a>
 The KenticoCloud iOS SDK is a library used for retrieving content and tracking activities. You can use the SDK as a CocoaPod package or add it manually.
 
-## Sample app
+## <a name="Sampleapp">Sample app</a>
 The repository contains sample app which demonstrates basic usage of the SDK.
 
 <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/splashScreens.png" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/ourBeans.png" width="212"> <img src="https://github.com/Kentico/cloud-sdk-swift/blob/master/SampleAppScreens/locations.png" width="212">
 
-## Quick start
+## <a name="Quickstart">Quick start</a>
 **1. Add a pod**  
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -73,7 +102,7 @@ client.getItems(modelType: Article.self, queryParameters: articleQueryParameters
 }
  ```
 
-## Installation
+## <a name="Installation">Installation</a>
 
 ### CocoaPods
 
@@ -101,7 +130,7 @@ Then, run the following command:
 $ pod install
 ```
  
-## Using the DeliveryClient
+## <a name="UsingtheDeliveryClient">Using the DeliveryClient</a>
 
 The `DeliveryClient` class is the main class of the SDK for getting content. Using this class, you can retrieve content from your Kentico Cloud projects.
 
@@ -128,7 +157,7 @@ let client = DeliveryClient.init(projectId: "YOUR_PROJECT_ID")
 
 For more details, see [Previewing unpublished content using the Delivery API](https://developer.kenticocloud.com/docs/preview-content-via-api).
  
-## Getting items
+## <a name="Gettingitems">Getting items</a>
 
 ### Using strongly typed models
 
@@ -233,7 +262,7 @@ client.getItem(modelType: Article.self, itemName: "on_roasts", completionHandler
                             
                          
 ```
-## Getting content types
+## <a name="Gettingcontenttypes">Getting content types</a>
 ### Get one content type
 ```swift
 client.getContentType(name: "coffee", completionHandler: { (isSuccess, contentType, error) in
@@ -259,7 +288,7 @@ client.getContentTypes(skip: 2, limit: 4, completionHandler: { (isSuccess, conte
     }
 })
 ```
-## Getting taxonomies
+## <a name="Gettingtaxonomies">Getting taxonomies</a>
 
 ### Get taxonomy group
 ```swift
@@ -293,7 +322,7 @@ client.getTaxonomies(completionHandler: { (isSuccess, deliveryItems, error) in
 })
 ```
 
-## Using the TrackingClient
+## <a name="UsingtheTrackingClient">Using the TrackingClient</a>
 In order to log custom activities and add contacts you need to start a session first.
 
 ### Create a session
@@ -310,24 +339,24 @@ client.trackActivity(activityName: "madrid")
 client.addContact(email: "martinkoklingacik@local.com")
 ```
 
-## Debug
+## <a name="Debug">Debug</a>
 If you want to view debug info from both clients set client's `enableDebugLogging` attribute:
 ```swift
 let deliveryClient = DeliveryClient.init(projectId: "YOUR_PROJECT_ID", enableDebugLogging = true)
 let trackingClient = TrackingClient.init(projectId: "YOUR_PROJECT_ID", enableDebugLogging = true)
 ```
-## Documentation
+## <a name="Documentation">Documentation</a>
 You can find full API reference documentation [here](https://kentico.github.io/cloud-sdk-swift/index.html).
 
-## Further information
+## <a name="Furtherinformation">Further information</a>
 
 For more developer resources, visit the Kentico Cloud Developer Hub at <https://developer.kenticocloud.com>.
 
-## Feedback & Contributing
+## <a name="FeedbackContributing">Feedback & Contributing</a>
 
 Check out the [contributing](https://github.com/Kentico/cloud-sdk-swift/blob/master/CONTRIBUTING.md) page to see the best places to file issues, start discussions, and begin contributing.
 
-## License
+## <a name="License">License</a>
 
 KenticoCloud Swift SDK is available under the MIT license. See the LICENSE file for more information.
 
